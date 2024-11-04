@@ -3,15 +3,15 @@ var router = express.Router();
 
 let usersController = require('../../controllers/api/users');
 
-/* GET cars listing. */
+/* GET user listing. 
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
-});
+}); */
 
-router.get('/list', usersController.list);
-router.post('/create', usersController.create);
-router.get('/get/:userID', usersController.userGet, usersController.userByID);
-router.put('/edit/:userID', usersController.update);
-router.delete('/delete/:userID', usersController.remove);
+router.get('/', usersController.list);
+router.post('/', usersController.create);
+router.get('/:userID', usersController.userGet, usersController.userByID);
+router.put('/:userID', usersController.update);
+router.delete('/:userID', usersController.remove);
 
 module.exports = router;
